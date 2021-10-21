@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController @CrossOrigin(origins = "hhtp://localhost:4288")
+@RestController @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
 public class RoomController {
 
@@ -24,7 +24,7 @@ public class RoomController {
         return roomRepository.findAll();
     }
 
-    @GetMapping("/room/id")
+    @GetMapping("/rooms/{id}")
     public ResponseEntity<Room> getRoomById(@PathVariable(value = "id") long roomId) throws ResourceNotFoundException {
         Room room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new ResourceNotFoundException("Room not found: " + roomId));

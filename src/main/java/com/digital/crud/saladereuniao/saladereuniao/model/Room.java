@@ -16,6 +16,9 @@ public class Room {
     private String startHour;
     private String endHour;
 
+    public Room() {
+    }
+
     public Room(long id, String name, String date, String startHour, String endHour) {
         this.id = id;
         this.name = name;
